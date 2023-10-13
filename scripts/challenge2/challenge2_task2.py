@@ -80,7 +80,7 @@ class RobotObstacle :
 
 
 def main():
-	rospy.init_node("Avoidance")                                 				        # Node initialization whose name is Avoidance
+	rospy.init_node("Avoidance")                                 				        # Node initialization whose name is "Avoidance"
 	robotObstacle = RobotObstacle()                              				        # Creation of a RobotObstacle object
         rospy.Rate(10).sleep()                                                                          # Pauses the program after n executions per second
         rospy.spin()                                                                                    # To keep on executing the program until its shutdown
