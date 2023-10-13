@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import rospy
-from sensor_msgs.msg import LaserScan
-from geometry_msgs.msg import Twist
-from gazebo_msgs.msg import ModelStates
+import rospy                                                                          # Import the ROS Python library
+from sensor_msgs.msg import LaserScan                                                 # Import LaserScan message type
+from geometry_msgs.msg import Twist                                                   # Import Twist message type
+from gazebo_msgs.msg import ModelStates                                               # Import ModelStates message type
 
 class RobotObstacle:
 
@@ -23,7 +23,7 @@ class RobotObstacle:
         self.pub = rospy.Publisher("/cmd_vel", Twist, queue_size=10)                    # Publisher that allows to send velocity commands to the robot
         rospy.Subscriber("/scan", LaserScan, self.distance_callback)                    # Subscriber that reads LaserScan type data from topic named /scan
         rospy.Subscriber("/gazebo/model_states", ModelStates, self.model_callback)      # Subscriber that reads ModelState type data from topic named /gazebo/model_states
-											                                            # ModelStates contains all the models loaded on Gazebo (ground, wall and robot)
+											# ModelStates contains all the models loaded on Gazebo (ground, wall and robot)
                                                                                         # This subscriber allows us to get specific data about those models
 
         
@@ -132,8 +132,8 @@ class RobotObstacle:
 def main():
     rospy.init_node("Avoidance_in_all_directions")                                      # Node initialization whose name is "Avoidance_in_all_directions"
     robot_obstacle = RobotObstacle()                                                    # Creation of a RobotObstacle object
-    rospy.Rate(10).sleep() 
-    rospy.spin()
+    rospy.Rate(10).sleep()                                                              # Pauses the program after n executions per second
+    rospy.spin()                                                                        # To keep on executing the program until its shutdown
 
 if __name__ == '__main__':
     main()
