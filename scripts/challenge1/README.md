@@ -3,7 +3,7 @@
 ## Challenge 1
 
 The first challange consists in making our robot follow trajectories defined by colored lines on the ground and stop at its goal point.
-To do that, he have to subscribe to a topic that allows to get images from our robot's camera. Then we process those images with OpenCv to sample only the need parts and adjust our robot's behavior by sending velocty commands with [geometry_msgs/Twist](https://docs.ros.org/en/diamondback/api/geometry_msgs/html/msg/Twist.html) data type. based on what it perceives.
+To do that, he have to subscribe to a topic that allows to get images from our robot's camera. Then we process those images with OpenCv to sample only the needed parts and adjust our robot's behavior by sending velocty commands with [geometry_msgs/Twist](https://docs.ros.org/en/diamondback/api/geometry_msgs/html/msg/Twist.html) data type. based on what it perceives.
 In most of the tasks, the lines is yellow, sometimes red, and the goal point is green.
 
 - [Task 1](challenge1_task1.py) : Turtlebot has to follow a yellow line on a simulated Gazebo environment
