@@ -49,11 +49,11 @@ class RobotObstacle :
 		if self.wall_detected and (self.wall_speed < 0 or self.wall_speed > 0):
     		# We compute the robot's speed depending on its front and distance between consecutive callbacks
 			if front < self.security_distance + self.wall_distance_between_callbacks: 
-			     move.linear.x = -(self.wall_speed + velocity_correction_coefficient)
+				move.linear.x = -(self.wall_speed + velocity_correction_coefficient)
 			if front > self.security_distance:
-			     move.linear.x = -(self.wall_speed - velocity_correction_coefficient)
+				move.linear.x = -(self.wall_speed - velocity_correction_coefficient)
 			if front < self.security_distance:           
-			     move.linear.x = -(self.wall_speed + velocity_correction_coefficient)
+				move.linear.x = -(self.wall_speed + velocity_correction_coefficient)
 	
 		move.angular.z = 0                           									# To set angular velocity to 0, so that it doesn't rotate
 

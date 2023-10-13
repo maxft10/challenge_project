@@ -129,8 +129,8 @@ class RobotObstacle:
         rospy.loginfo(self.move)                                                        # To display robot's velocity
 
     def model_callback(self, model):
-        self.wall_speed = model.twist[1].linear.x                                          # We get wall's speed
-        self.wall_orientation = model.pose[1].orientation.z                                # We get wall's orientation
+        self.wall_speed = model.twist[1].linear.x                                       # We get wall's speed
+        self.wall_orientation = model.pose[1].orientation.z                             # We get wall's orientation
 
 def main():
     rospy.init_node("Avoidance_in_all_directions")                                      # Node initialization whose name is "Avoidance_in_all_directions"

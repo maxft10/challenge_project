@@ -42,7 +42,7 @@
   <param name="distance_of_security" type="double" value="20" />
 
   <!--   
-<node name="Avoidance_in_all_directions" pkg="challenge_project" type="challenge2_task32.py" output="screen" required="true" />
+<node name="Avoidance_in_all_directions" pkg="challenge_project" type="challenge2_task3.py" output="screen" required="true" />
   -->
 
 </launch>

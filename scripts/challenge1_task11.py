@@ -15,7 +15,7 @@ class RotateRobot:
         twist_msg = Twist()
         angular_speed = 1.0  # Vitesse angulaire (ajustez selon votre besoin)
         twist_msg.angular.z = angular_speed if angle > 0 else -angular_speed  # Détermine la direction de la rotation
-	rospy.loginfo('angular = %s', angular_speed)
+        rospy.loginfo('angular = %s', angular_speed)
         # Calculer le temps nécessaire pour atteindre l'angle spécifié
         duration = abs(angle / angular_speed)
 
