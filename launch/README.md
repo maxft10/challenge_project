@@ -6,7 +6,7 @@ This folder contains launches that enable the execution of our ROS nodes and the
 
 - [gazebo.launch](gazebo.launch) : Launches the Gazebo simulator with the correct parameters in an empty environment
 - [rviz.launch](rviz.launch) : Launches the Rviz visualizer with its parameters and robot description
-- `**challenge(i)_task(j).launch**` : Files used to launch different scripts and environments;
+- `challenge(i)_task(j).launch` : Files used to launch different scripts and environments;
 
 Where:
 - `i` represents the challenge
