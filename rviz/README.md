@@ -2,4 +2,4 @@
 
 ## Description
 
-This files only contains one file named **configuration.rviz** which saves all the features from Rviz configuration.
+This files only contains one file named `**configuration.rviz**` which saves all the features from Rviz configuration.

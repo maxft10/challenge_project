@@ -7,8 +7,8 @@ To do that, he have to subscribe to a topic that allows to get images from our r
 In most of the tasks, the lines is yellow, sometimes red, and the goal point is green.
 
 - [Task 1](challenge1_task1.py) : Turtlebot has to follow a yellow line on a simulated Gazebo environment
-To be able to follow the yellow line, we have to obtain images from robot's camera by susbcribing to a topic named **/camera/image_raw**. Then images are converted into OpenCV images. Futhermore, we perform colors tresholding, masking and we compute centroid coordinates to determine the direction Turtlebot has to move in.
-We make robot move by publishing velocity commands through a topic named **/cmd_vel**.
+To be able to follow the yellow line, we have to obtain images from robot's camera by susbcribing to a topic named `**/camera/image_raw**`. Then images are converted into OpenCV images. Futhermore, we perform colors tresholding, masking and we compute centroid coordinates to determine the direction Turtlebot has to move in.
+We make robot move by publishing velocity commands through a topic named `**/cmd_vel**`.
 If Turtlebot lost its trajectory tracking, it rotates around itself in order to look for its path. Turtlebot stops when the green goal point is detected.
 
 - [Task 2](challenge1_task2.py) : It is similar to the previous one. The difference is there are red trajectories this time and our robot has to deccelerate when it detecs them. The detection works the same as the previous. We just add a mask and centroid for the red lines.

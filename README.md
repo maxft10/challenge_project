@@ -31,12 +31,12 @@ If you want to know more about ROS and its concepts, click on this [link](http:/
 All our work is contained within a ROS package named challenge_project. It containes files we have implemented and files we haven't. Those last files are meant to describe Turtlebot and its sensors, the environments in which it will interact, and the ones that enable to run it and their environments with Gazebo or Rviz. We have modified those last files in order to also run scripts.
 
 Our ROS package depends on :
-- [std_msgs](http://wiki.ros.org/std_msgs) : a ROS package that provides standardized type of messages allowing ROS nodes to communicate.
+- [std_msgs](http://wiki.ros.org/std_msgs) : a ROS package that provides standardized type of messages allowing ROS nodes to communicate
 - [turtlebot3_msgs](http://wiki.ros.org/turtlebot3_msgs) : a package that contains specific types of messages to Turtlebot
 - [cv_bridge](http://wiki.ros.org/cv_bridge) : a package that allows to convert ROS images into OpenCV images and process them.
 
 To be more precise our package is organized as such, with the following folders:
-- [scripts](scripts) : a folder which contains our codes which are meant to specific tasks.
+- [scripts](scripts) : a folder which contains our codes which are meant to specific tasks
 - [launch](launch) : a folder which contains launch files that enable to run several executables or other files at the same time
 - [rviz](rviz) : a folder which contains configuration.rviz which saves all the features from Rviz configuration
 - [urdf](urdf) : a folder with the description of Turtlebot and its sensors
