@@ -75,7 +75,7 @@ class LineFollower:                               # We define a class to follow 
             yellow_cy = int(M_yellow['m01']/M_yellow['m00'])
             cv2.circle(image, (yellow_cx, yellow_cy), 20, (0,0,255), -1)                # Draw a circle at centroid position
 
-            yellow_error = yellow_cx - width/2                                   # Error between centroid position and center of image
+            yellow_error = yellow_cx - width/2                                          # Error between centroid position and center of image
             velocity_cmd.linear.x = 0.8
             velocity_cmd.angular.z = -yellow_error/100
 
@@ -87,7 +87,7 @@ class LineFollower:                               # We define a class to follow 
             red_cy = int(M_red['m01']/M_red['m00'])
             cv2.circle(image, (red_cx, red_cy), 20, (255,0,0), -1)                      # Draw a circle at centroid position
 
-            red_error = red_cx - width/2                                        # Error between centroid position and center of image
+            red_error = red_cx - width/2                                                # Error between centroid position and center of image
             velocity_cmd.linear.x = 0.3
             velocity_cmd.angular.z = -red_error/100
 
@@ -114,7 +114,7 @@ class LineFollower:                               # We define a class to follow 
         cv2.waitKey(2)
 
 def main():
-    rospy.init_node('Line_Follower_Speed')                                                  # We initialize a node name Line_Follower_Speed
+    rospy.init_node('Line_Follower_Speed')                                              # We initialize a node name Line_Follower_Speed
     follower = LineFollower()                                                           # We create a LineFollower object
     rospy.Rate(10).sleep() 
     rospy.spin()                                                                        # To keep on executing the program until its shutdown
