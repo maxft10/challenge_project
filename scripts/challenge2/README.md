@@ -2,7 +2,7 @@
 
 ## Challenge 2
 
-This **[second challenge](scripts/challenge2)** consists in making the robot avoid a wall that can be immobile or moving toward it. We still use the same **/cmd_vel** topic to send velocty commands to the robot with [geometry_msgs/Twist](https://docs.ros.org/en/diamondback/api/geometry_msgs/html/msg/Twist.html) data type. And to detect the wall, we subscribe to topic which provides us data from our robot's LIDAR. We also subscribe to another topic to get wall's speed.
+This second challenge consists in making the robot avoid a wall that can be immobile or moving toward it. We still use the same **/cmd_vel** topic to send velocty commands to the robot with [geometry_msgs/Twist](https://docs.ros.org/en/diamondback/api/geometry_msgs/html/msg/Twist.html) data type. And to detect the wall, we subscribe to topic which provides us data from our robot's LIDAR. We also subscribe to another topic to get wall's speed.
 
 - [Task 1](challenge2_task1.py) : The problem is simple. The robot just needs to stop when it reaches a certain position from the wall. To do that, we subscribe to a topic named **/scan** and we obtain data from robot's LIDAR. In this case, data are from [sensor_msgs/LaserScan](http://docs.ros.org/en/melodic/api/sensor_msgs/html/msg/LaserScan.html) type. 
 We are interested in the field that give us the distance between a robot and an obstacle in all directions. This field is ranges and is an array that contains the range measurements at different angles.

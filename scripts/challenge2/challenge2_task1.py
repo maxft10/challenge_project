@@ -13,12 +13,12 @@ class RobotObstacle :
 		self.laser_sub = rospy.Subscriber('/scan', LaserScan, self.distance_callback)   # Subscriber that reads LaserScan type data from topic named /scan
 		self.pub = rospy.Publisher("/cmd_vel", Twist, queue_size=10)  				    # Publisher that allows to send velocity commands to the robot
 		
- 
+
 	def distance_callback(self, distance):
 		front = distance.ranges[0]                                                      # Distance from the robot to the wall, taken from /scan topic
 		move = Twist()                                                                  # Twist Object to send velocity command to the robot
 
-	
+
 		# We set velocity based on distance
 		if front <= self.stop_distance + 0.2:
 			move.linear.x = 0

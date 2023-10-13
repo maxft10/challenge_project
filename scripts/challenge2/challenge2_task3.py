@@ -28,9 +28,6 @@ class RobotObstacle:
 
         
     def distance_callback(self, dt):
-        # if not self.not_first_callback:
-        #     self.last_callback_time = rospy.get_time()
-        #     self.not_first_callback = True                                              # It is not the first callback
 
         callback_time = rospy.get_time()                                                # Time when distance_callback method is called
 

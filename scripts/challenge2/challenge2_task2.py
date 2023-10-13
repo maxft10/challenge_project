@@ -20,7 +20,7 @@ class RobotObstacle :
 		self.pub = rospy.Publisher("/cmd_vel", Twist, queue_size=10)                    # Publisher that allows to send velocity commands to the robot
 		rospy.Subscriber('/scan', LaserScan, self.distance_callback)   					# Subscriber that reads LaserScan type data from topic named /scan
 		rospy.Subscriber('/gazebo/model_states', ModelStates, self.model_callback)      # Subscriber that reads ModelStates type data from topic named /gazebo/model_states
-											        									# ModelStates contains all the models loaded on Gazebo (ground, wall and robot)
+																						# ModelStates contains all the models loaded on Gazebo (ground, wall and robot)
 																						# This subscriber allows us to get specific data about those models
 
 
@@ -47,14 +47,14 @@ class RobotObstacle :
 
 		# If the wall is detected and moving toward or backward the robot
 		if self.wall_detected and (self.wall_speed < 0 or self.wall_speed > 0):
-    		# We compute the robot's speed depending on its front and distance between consecutive callbacks
+			# We compute the robot's speed depending on its front and distance between consecutive callbacks
 			if front < self.security_distance + self.wall_distance_between_callbacks: 
 				move.linear.x = -(self.wall_speed + velocity_correction_coefficient)
 			if front > self.security_distance:
 				move.linear.x = -(self.wall_speed - velocity_correction_coefficient)
 			if front < self.security_distance:           
 				move.linear.x = -(self.wall_speed + velocity_correction_coefficient)
-	
+
 		move.angular.z = 0                           									# To set angular velocity to 0, so that it doesn't rotate
 
 		self.pub.publish(move)              											# To send velocity command to the robot
@@ -75,8 +75,8 @@ class RobotObstacle :
 		#names = model.name
 		#rospy.loginfo("List of model names: %s", names)
 		self.wall_speed = model.twist[1].linear.x            							# To get speed of model whose index is 1, 
-		                                                                                # from /gazebo/model_states topic. This is the wall.
-								                                                        # Ground index is 0 and robot index is 2.
+																						# from /gazebo/model_states topic. This is the wall.
+																						# Ground index is 0 and robot index is 2.
 
 
 def main():
