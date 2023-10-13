@@ -42,7 +42,7 @@ To be more precise our package is organized as such, with the following folders:
 - [urdf](urdf) : a folder with the description of Turtlebot and its sensors
 - [worlds](worlds) : a folder with the different worlds for our project for gazebo usage. Each world file is associated with a challenge or a task.
 
-
+We will upload videos of our results later.
 
 
 
