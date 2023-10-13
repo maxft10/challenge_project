@@ -116,7 +116,7 @@ class LineFollower:                               # We define a class to follow 
 def main():
     rospy.init_node('Line_Follower_Speed')                                              # We initialize a node name Line_Follower_Speed
     follower = LineFollower()                                                           # We create a LineFollower object
-    rospy.Rate(10).sleep() 
+    rospy.Rate(10).sleep()                                                              # Pauses the program after n executions per second
     rospy.spin()                                                                        # To keep on executing the program until its shutdown
 
 if __name__ == '__main__':
