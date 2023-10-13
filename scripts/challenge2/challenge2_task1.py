@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import rospy, std_msgs
-from geometry_msgs.msg import Twist
-from sensor_msgs.msg import LaserScan
+import rospy, std_msgs                                                                # Import the ROS Python library
+from sensor_msgs.msg import LaserScan                                                 # Import LaserScan message type
+from geometry_msgs.msg import Twist                                                   # Import Twist message type
+from gazebo_msgs.msg import ModelStates                                               # Import ModelStates message type
 
 class RobotObstacle :
 	
@@ -11,7 +12,7 @@ class RobotObstacle :
 		self.stop_distance = 0.5                                                        # Stop distance set to 0.5m
 
 		self.laser_sub = rospy.Subscriber('/scan', LaserScan, self.distance_callback)   # Subscriber that reads LaserScan type data from topic named /scan
-		self.pub = rospy.Publisher("/cmd_vel", Twist, queue_size=10)  				    # Publisher that allows to send velocity commands to the robot
+		self.pub = rospy.Publisher("/cmd_vel", Twist, queue_size=10)  		        # Publisher that allows to send velocity commands to the robot
 		
 
 	def distance_callback(self, distance):
@@ -25,7 +26,7 @@ class RobotObstacle :
 		elif front > self.stop_distance:
 			move.linear.x = 0.4
 
-		self.pub.publish(move)                                                   		# To send velocity command to the robot
+		self.pub.publish(move)                                                   	# To send velocity command to the robot
 
 		# To display data
 		#"""
@@ -35,10 +36,10 @@ class RobotObstacle :
 
 
 def main():
-	rospy.init_node("Emergency_Stop")              # Node initialization whose name is Emergency_Stop
-	robotObstacle = RobotObstacle()                # Creation of a RobotObstacle object
-	rospy.Rate(10).sleep() 
-	rospy.spin()
+	rospy.init_node("Emergency_Stop")                                                       # Node initialization whose name is Emergency_Stop
+	robotObstacle = RobotObstacle()                                                         # Creation of a RobotObstacle object
+	rospy.Rate(10).sleep()                                                                  # Pauses the program after n executions per second
+	rospy.spin()                                                                            # To keep on executing the program until its shutdown
 
 if __name__ == '__main__':
     main()
