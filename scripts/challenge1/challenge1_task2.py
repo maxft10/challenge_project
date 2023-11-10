@@ -76,7 +76,7 @@ class LineFollower:                               # We define a class to follow 
             cv2.circle(image, (yellow_cx, yellow_cy), 20, (0,0,255), -1)                # Draw a circle at centroid position
 
             yellow_error = yellow_cx - width/2                                          # Error between centroid position and center of image
-            velocity_cmd.linear.x = 0.8
+            velocity_cmd.linear.x = 0.6
             velocity_cmd.angular.z = -yellow_error/100
 
         # If red line is detected, Turtlebot follows it with a different velocity
@@ -88,7 +88,7 @@ class LineFollower:                               # We define a class to follow 
             cv2.circle(image, (red_cx, red_cy), 20, (255,0,0), -1)                      # Draw a circle at centroid position
 
             red_error = red_cx - width/2                                                # Error between centroid position and center of image
-            velocity_cmd.linear.x = 0.3
+            velocity_cmd.linear.x = 0.2
             velocity_cmd.angular.z = -red_error/100
 
         # If green mark is detected, Turtlebot stops
@@ -104,19 +104,19 @@ class LineFollower:                               # We define a class to follow 
 
         self.pub.publish(velocity_cmd)                                                  # Send velocity command to Turtlebot
         rospy.loginfo(velocity_cmd)
-        rospy.loginfo("M_yellow['m00'] = %s", M_yellow['m00'])
-        rospy.loginfo("M_red['m00'] = %s", M_red['m00'])
+        # rospy.loginfo("M_yellow['m00'] = %s", M_yellow['m00'])
+        # rospy.loginfo("M_red['m00'] = %s", M_red['m00'])
 
         #Show images
         cv2.imshow("Image from camera", image)
-        cv2.imshow("window yellow", yellow_mask)
-        cv2.imshow("window red", red_mask)
+        # cv2.imshow("window yellow", yellow_mask)
+        # cv2.imshow("window red", red_mask)
         cv2.waitKey(2)
 
 def main():
     rospy.init_node('Line_Follower_Speed')                                              # We initialize a node named "Line_Follower_Speed"
     follower = LineFollower()                                                           # We create a LineFollower object
-    rospy.Rate(10).sleep()                                                              # Pauses the program after n executions per second
+    rospy.Rate(10).sleep()                                                              # Pauses the program after 10 executions per second
     rospy.spin()                                                                        # To keep on executing the program until its shutdown
 
 if __name__ == '__main__':

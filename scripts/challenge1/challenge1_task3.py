@@ -118,19 +118,19 @@ class LineFollower:                               # We define a class to follow 
 
         self.pub.publish(velocity_cmd)                                                  # Send velocity command to Turtlebot
         rospy.loginfo(velocity_cmd)
-        rospy.loginfo("M_yellow['m00'] = %s", M_yellow['m00'])
-        rospy.loginfo("M_red['m00'] = %s", M_red['m00'])
+        # rospy.loginfo("M_yellow['m00'] = %s", M_yellow['m00'])
+        # rospy.loginfo("M_red['m00'] = %s", M_red['m00'])
 
         #Show images
         cv2.imshow("Image from camera", image)
-        cv2.imshow("window yellow", yellow_mask)
-        cv2.imshow("window red", red_mask)
+        # cv2.imshow("window yellow", yellow_mask)
+        # cv2.imshow("window red", red_mask)
         cv2.waitKey(2)
 
 def main():
     rospy.init_node('Line_Follower_Sharp_Turns')                                        # We initialize a node named "Line_Follower_Sharp_Turns"
     follower = LineFollower()          	                                                # We create a LineFollower object
-    rospy.Rate(5).sleep()                                                               # Pauses the program after n executions per second
+    rospy.Rate(5).sleep()                                                               # Pauses the program after 10 executions per second
     rospy.spin()                                                                        # To keep on executing the program until its shutdown
 
 if __name__ == '__main__':
