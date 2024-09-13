@@ -12,6 +12,8 @@ This folder contains all the codes we have written to reach the objectives. They
 
 For example, [challenge2_task3.py](challenge2/challenge2_task3.py) is a script associated with task 3 from challenge 2. And [challenge2_task2_world_control.py](challenge2/challenge2_task2_world_control.py) is used for task 2 from challenge 2 and makes the wall move forward and backward.
 
+```bash
+`challenge(i)_task(j)_world_control.py`
 
 
 
